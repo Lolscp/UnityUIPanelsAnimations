@@ -1,2 +1,2 @@
 # UnityUIPanelsAnimations
-Анимация Ui панельки
+Анимация Ui панельков
