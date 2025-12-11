@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -184,13 +184,13 @@ TextureImporter:
       name: wad_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 226
-        width: 44
-        height: 12
+        x: 1
+        y: 224
+        width: 46
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 3, y: 4, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -247,13 +247,13 @@ TextureImporter:
       name: wad_7
       rect:
         serializedVersion: 2
-        x: 98
-        y: 234
-        width: 28
-        height: 4
+        x: 97
+        y: 233
+        width: 30
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
