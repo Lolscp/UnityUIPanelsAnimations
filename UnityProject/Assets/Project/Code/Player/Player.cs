@@ -1,18 +1,12 @@
 using UnityEngine;
 
-namespace Project.Code.Enitities.EntityPlayer {
-    public sealed class Player : MonoBehaviour {
-        public Health Health { get; private set; }
+namespace Project.Code.Player {
+    public class Player : MonoBehaviour {
+        public HealthBehaviour HealthBehaviour { get; private set; }
 
-        public Player(Health health) {
-            Health = health;
+        public void Inti(float MaxHealth) {
+            HealthBehaviour = new HealthBehaviour(MaxHealth);
         }
 
-        private void OnDisable() {
-            Health.DeleteEvents();
-        }
-        private void OnEnable() {
-            Health.SubscribeEvents();
-        }
     }
 }

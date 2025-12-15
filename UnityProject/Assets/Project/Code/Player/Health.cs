@@ -1,45 +1,22 @@
-using System;
+namespace Project.Code.Player {
+    public class Health {
+        private float _currentHealth;
+        private float _maxHealth;
 
-namespace Project.Code.Enitities.EntityPlayer {
-    public sealed class Health {
-        public float CurrentHealth { get; private set; }
-        public float MaxHealth { get; private set; }
+        public Health(float maxHealth) {
+            _maxHealth = maxHealth;
+            _currentHealth = maxHealth;
+        }
+        public void TakeDamage(float damage) {
+            _currentHealth -= damage;
+            if (_currentHealth < 0) _currentHealth = 0;
+        }
+        public void Heal(float amount) {
+            _currentHealth += amount;
+            if (_currentHealth > _maxHealth) _currentHealth = _maxHealth;
+        }
 
-        public Health(float maxHealth,bool immortality,IHealth health) {
-            _IHealth = health;
-            MaxHealth = maxHealth;
-            CurrentHealth = maxHealth;
-            Immortality = immortality;
-
-            _IHealth.UpdatedHealEvent += Heal;
-            _IHealth.UpdatedDamageEvent += TakeDamage;
-        }
-        private void TakeDamage(float damage) {
-            CurrentHealth -= damage;
-            PlayerEceivedDamageEvent?.Invoke(damage, CurrentHealth);
-            if (CurrentHealth < 0) {
-                if (Immortality == false) PlayerDiedEvent?.Invoke();
-                CurrentHealth = 0;
-            }
-        }
-        private void Heal(float amount) {
-            CurrentHealth += amount;
-            PlayerRestoredHealthEvent?.Invoke(amount, CurrentHealth);
-            if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;            
-        }
-        public void DeleteEvents() {
-            _IHealth.UpdatedHealEvent -= Heal;
-            _IHealth.UpdatedDamageEvent -= TakeDamage;
-        }
-        public void SubscribeEvents() {
-            _IHealth.UpdatedHealEvent += Heal;
-            _IHealth.UpdatedDamageEvent += TakeDamage;
-        }
-        private IHealth _IHealth;
-        public bool Immortality { get; private set; }
-
-        public event Action<float, float> PlayerEceivedDamageEvent;
-        public event Action<float, float> PlayerRestoredHealthEvent;
-        public event Action PlayerDiedEvent;
+        public float CurrentHealth => _currentHealth;
+        public float MaxHealth => _maxHealth;
     }
 }
