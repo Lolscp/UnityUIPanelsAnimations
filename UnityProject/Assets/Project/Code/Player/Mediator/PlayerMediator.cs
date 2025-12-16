@@ -13,6 +13,7 @@ namespace Project.Code.Player.Mediator {
         }
 
         private Player Player;
+        private HealthBehaviour HealthBehaviour;
         private HealthBar HealthBar;
     }
 }
