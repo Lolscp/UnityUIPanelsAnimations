@@ -7,6 +7,8 @@ namespace Project.Code.Player {
         public void Inti(float MaxHealth) {
             HealthBehaviour = new HealthBehaviour(MaxHealth);
         }
-
+        public void UpdateHealth() {
+            Debug.Log($"Player Health: {HealthBehaviour.CurrentHealth}/{HealthBehaviour.MaxHealth}");
+        }
     }
 }
