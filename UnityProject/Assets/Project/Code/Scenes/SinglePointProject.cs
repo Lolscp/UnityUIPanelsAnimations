@@ -4,12 +4,19 @@ using Project.Code.Testes;
 using UnityEngine;
 
 namespace Project.Code.Scenes {
-    public class SinglePoint : MonoBehaviour {
+    public class SinglePointProject : MonoBehaviour {
 
-        private void IntiAll() {
+        public void Awake() {
+            // Factories Enemie
+            // Gameplay
+            _FactoriePlayer.Inti(_player);
+            _FactoriePlayer.Creation();
+            // Testes
+            _PlayerDamageTest.Inti(_player);
         }
-        private void Awake() {
-        }
+
+
+
 
         [Header("Managers")]
         [SerializeField] private ManegerFactoriesEnemie _manegerFactoriesEnemie;

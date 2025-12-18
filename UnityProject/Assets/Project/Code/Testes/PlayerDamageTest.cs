@@ -1,4 +1,3 @@
-using Project.Code.Player.Mediator;
 using Project.Code.Services.Health.Player;
 using UnityEngine;
 
@@ -19,6 +18,5 @@ namespace Project.Code.Test {
         public float ValueHeal;
         public float ValueDamage;
 
-        private IMediator<PlayerDamageTest> IMediator;
     }
 }

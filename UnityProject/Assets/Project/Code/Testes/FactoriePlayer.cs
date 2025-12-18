@@ -7,6 +7,6 @@ namespace Project.Code.Testes {
         public float _MaxHealth;
 
         public void Inti(Player.Player player) => _player = player;
-        public void Creation() => _player.Inti(MaxHealth: _MaxHealth);
+        public void Creation() => _player.Inti();
     }
 }
